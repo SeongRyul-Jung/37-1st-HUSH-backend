@@ -75,7 +75,7 @@ return 값 : Thumbnail image, 상품이름, 카테고리 이름, 수량, 가격,
 장바구니 페이지에서의 수량조절 API
 
 1.  로그인 시 부여된 Access Token을 이용해 이용자를 특정
-2.  장바구니 페이지에서 수량을 조절할 때 마다 post 요정(**Access Token, product_id**)으로 변경되는 값(**quantity**)을 전달 받아 carts 테이블의 해당 raw 수정
+2.  장바구니 페이지에서 수량을 조절할 때 마다 post 요청(**Access Token, product_id**)으로 변경되는 값(**quantity**)을 전달 받아 carts 테이블의 해당 raw 수정
 
 ### Delete
 
