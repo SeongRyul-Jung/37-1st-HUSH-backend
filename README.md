@@ -59,30 +59,28 @@
 
 # 5. 장바구니 페이지
 
-- ## 장바구니 페이지
+### Create
 
-  ### Create
+1.  로그인 시 부여된 Asccess Token을 이용해 이용자를 특정
+2.  제품 상세 페이지에서 해당 상품을 장바구니에 담을 때 Access Token, 상품Id, 수량을 전달 받아 carts 테이블에 해당 이용자의 raw 생성
 
-  1.  로그인 시 부여된 Asccess Token을 이용해 이용자를 특정
-  2.  제품 상세 페이지에서 해당 상품을 장바구니에 담을 때 Access Token, 상품Id, 수량을 전달 받아 carts 테이블에 해당 이용자의 raw 생성
+### Read
 
-  ### Read
+carts 테이블에 생성된 제품의 정보를 해당 페이지에 필요한 정보와 함께 정보 전달
+carts 테이블을 시작으로 products, categories 테이블을 Left Join을 통해 해당 정보를 가져옴
+return 값 : Thumbnail image, 상품이름, 카테고리 이름, 수량, 가격, 제품Id
 
-  carts 테이블에 생성된 제품의 정보를 해당 페이지에 필요한 정보와 함께 정보 전달
-  carts 테이블을 시작으로 products, categories 테이블을 Left Join을 통해 해당 정보를 가져옴
-  return 값 : Thumbnail image, 상품이름, 카테고리 이름, 수량, 가격, 제품Id
+### Update
 
-  ### Update
+장바구니 페이지에서의 수량조절 API
 
-  장바구니 페이지에서의 수량조절 API
+1.  로그인 시 부여된 Access Token을 이용해 이용자를 특정
+2.  장바구니 페이지에서 수량을 조절할 때 마다 post 요정(**Access Token, product_id**)으로 변경되는 값(**quantity**)을 전달 받아 carts 테이블의 해당 raw 수정
 
-  1.  로그인 시 부여된 Access Token을 이용해 이용자를 특정
-  2.  장바구니 페이지에서 수량을 조절할 때 마다 post 요정(**Access Token, product_id**)으로 변경되는 값(**quantity**)을 전달 받아 carts 테이블의 해당 raw 수정
+### Delete
 
-  ### Delete
-
-  장바구니 페이지에서 상품 삭제 API
-  페이지 내에서 삭제 요청시 전달 받은 Access Token, product_id를 이용해 carts 테이블의 해당 raw 삭제
+장바구니 페이지에서 상품 삭제 API
+페이지 내에서 삭제 요청시 전달 받은 Access Token, product_id를 이용해 carts 테이블의 해당 raw 삭제
 
 ![05 장바구니페이지](https://user-images.githubusercontent.com/103636274/193210694-ff098bd4-382a-46b5-9ef1-5131ed5da4a1.png)
 
